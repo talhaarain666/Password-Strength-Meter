@@ -6,7 +6,6 @@ import streamlit as st
 # Common Passwords Blacklist
 COMMON_PASSWORDS = {"password123", "123456", "qwerty", "admin", "letmein", "welcome", "passw0rd"}
 
-# Function to Check Password Strength
 def check_password_strength(password):
     score = 0
     feedback = []
@@ -38,7 +37,6 @@ def check_password_strength(password):
 
     return score, feedback
 
-# Function to Generate a Strong Password
 def generate_strong_password(length=12):
     all_chars = string.ascii_letters + string.digits + "!@#$%^&*()_+{}:;'<>,.?/~`"
     password = [
@@ -51,7 +49,6 @@ def generate_strong_password(length=12):
     random.shuffle(password)
     return ''.join(password)
 
-# Streamlit UI
 st.title("🔒 Password Strength Meter")
 
 password = st.text_input("Enter your password:", type="password")
